@@ -3,7 +3,7 @@ import Radio from "./Radio";
 import Multiple from "./Multiple";
 import Text from "./Text";
 import "./QuestionCard.css";
-const QuestionCard = () => {
+const QuestionCard = ({ onAdd }) => {
   const selectRef = useRef();
   let i = 0;
   const [showInput, setShowInput] = useState(false);
@@ -18,6 +18,10 @@ const QuestionCard = () => {
     } else {
       selectRef.current.classList.remove("open");
     }
+  };
+
+  const handlePlus = () => {
+    onAdd();
   };
   return (
     <div className="question-card">
@@ -40,16 +44,18 @@ const QuestionCard = () => {
             <div className="custom-options">
               <span
                 onClick={() => setQType("multiple choice")}
-                className= {`custom-option ${qType === "multiple choice"?  "selected": ""}`}
-
+                className={`custom-option ${
+                  qType === "multiple choice" ? "selected" : ""
+                }`}
                 data-value="choice"
               >
                 Multiple choice
               </span>
               <span
                 onClick={() => setQType("radio")}
-                className= {`custom-option ${qType === "radio"?  "selected": ""}`}
-
+                className={`custom-option ${
+                  qType === "radio" ? "selected" : ""
+                }`}
                 className="custom-option"
                 data-value="Radio"
               >
@@ -57,7 +63,9 @@ const QuestionCard = () => {
               </span>
               <span
                 onClick={() => setQType("text")}
-                className= {`custom-option ${qType === "text"?  "selected": ""}`}
+                className={`custom-option ${
+                  qType === "text" ? "selected" : ""
+                }`}
                 data-value="text"
               >
                 Text
@@ -71,7 +79,9 @@ const QuestionCard = () => {
         {qType === "radio" && <Radio />}
         {qType === "text" && <Text />}
       </div>
-      <div className="sidebar"></div>
+      <div onClick={handlePlus} className="sidebar">
+        <i className="fa fa-plus-circle icon"></i>
+      </div>
     </div>
   );
 };

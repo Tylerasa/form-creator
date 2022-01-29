@@ -174,7 +174,7 @@ input[type="checkbox"]:checked:after, input[type="checkbox"]:after{
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    display: fle;
+    display: flex;
 }
 
 textarea{
