@@ -9,6 +9,7 @@
     -moz-box-shadow: 4px -4px 19px 0px rgba(0,0,0,0.25);
     padding: 20px;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .enter-text{
@@ -169,6 +170,11 @@ input[type="checkbox"]:checked:after, input[type="checkbox"]:after{
     box-shadow: 4px -4px 19px 0px rgba(0,0,0,0.25);
     -webkit-box-shadow: 4px -4px 19px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 4px -4px 19px 0px rgba(0,0,0,0.25);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    display: fle;
 }
 
 textarea{
@@ -182,4 +188,8 @@ textarea{
     font-family: Inter;
     font-size: 16px;
 
+}
+
+.icon{
+    font-size: 24px;
 }
