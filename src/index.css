@@ -1,5 +1,11 @@
 body {
   background-color: #d3d3d3;
   margin: 0;
-  font-family: Inter
+  font-family: Inter;
+  padding-top: 200px;
 }
+
+
+/* *{
+  border: 1px solid red;
+} */
